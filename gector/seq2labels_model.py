@@ -88,7 +88,7 @@ class Seq2Labels(Model):
 
         initializer(self)
 
-    @overrides
+    @overrides(check_signature=False)
     def forward(self,  # type: ignore
                 tokens: Dict[str, torch.LongTensor],
                 labels: torch.LongTensor = None,
@@ -129,7 +129,7 @@ class Seq2Labels(Model):
             A scalar loss to be optimised.
 
         """
-        encoded_text = self.text_field_embedder(tokens)
+        encoded_text = self.text_field_embedder(tokens) 
         batch_size, sequence_length, _ = encoded_text.size()
         mask = get_text_field_mask(tokens)
         logits_labels = self.tag_labels_projection_layer(self.predictor_dropout(encoded_text))
@@ -165,7 +165,7 @@ class Seq2Labels(Model):
         return output_dict
 
     @overrides
-    def decode(self, output_dict: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
+    def make_output_human_readable(self, output_dict: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
         """
         Does a simple position-wise argmax over each token, converts indices to string labels, and
         adds a ``"tags"`` key to the dictionary with the result.
