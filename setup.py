@@ -13,7 +13,7 @@ setup(
     url='https://github.com/grammarly/gector',
     author='grammarly',
     packages=find_packages(),
-    version='2.0',
+    version='3.0',
     license='Apache-2.0 License',
     description='GECToR – Grammatical Error Correction: Tag, Not Rewrite',
     long_description=open('README.md').read(),
@@ -26,5 +26,7 @@ setup(
                  'Topic :: Scientific/Engineering',
                  'Operating System :: Unix',
                  'Programming Language :: Python :: 3.8',
+                 'Programming Language :: Python :: 3.9',
+                 'Programming Language :: Python :: 3.10', 
                  ]
 )
