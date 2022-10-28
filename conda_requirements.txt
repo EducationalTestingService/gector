@@ -1,0 +1,9 @@
+tokenizers==0.12.1
+allennlp
+pytorch
+python-Levenshtein
+transformers
+scikit-learn
+sentencepiece
+overrides
+numpy
