@@ -11,10 +11,13 @@ It is mainly based on `AllenNLP` and `transformers`.
 The following command installs all necessary packages:
 ```bash
 conda create --name <Environment_name> python=3.8
-conda activate <Environment_name> 
-pip install -e .
+conda install --name <Environment_name> --file conda_requirements_cpu.txt
+conda activate <Environment_name>
+pip install -e . --no-dependencies
 ```
-The project was tested using Python 3.8, 3.9 and 3.10.
+The project was tested using Python 3.8, 3.9 and 3.10. If gpu is used, replaces
+the `conda_requirements_cpu.txt` with the `conda_requirements.txt`. The only
+difference between these two is that `pytorch-cpu` is used in the former.
 
 ## Unit tests
 After activating the conda environment, simply run the code below: 
