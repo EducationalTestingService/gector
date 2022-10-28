@@ -1,0 +1,46 @@
+package:
+  name: gector
+  version: 1.0.0
+
+source:
+  path: ../../../gector
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - cd $SRC_DIR
+    - "$PYTHON -m pip install . --no-deps -vv"
+    - mkdir -p $PREFIX/share/data
+    - rsync -tu --progress $SRC_DIR/data/verb-form-vocab.txt $PREFIX/share/data/verb-form-vocab.txt
+
+requirements:
+  host:
+    - python>=3.8,<3.9
+  # build:
+  #   - transformers
+  run:
+    - python>=3.8,<3.9
+    - allennlp
+    - pytorch
+    - python-Levenshtein
+    - scikit-learn
+    - tokenizers>=0.11.1,!=0.11.3,<0.13
+    - overrides
+    # - transformers
+
+test:
+  # Python imports
+  imports:
+    - gector
+    # - gector.basic_field_embedder
+    # - gector.bert_token_embedder
+    # - gector.datareader
+    # - gector.seq2labels_model
+    # - gector.tokenization
+    # - gector.tokenizer_indexer
+
+about:
+  home: https://github.com/EducationalTestingService/gector
+  license: Apache-2.0
+  license_file: LICENSE
