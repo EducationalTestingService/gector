@@ -1,6 +1,6 @@
 package:
   name: gector
-  version: 1.0.0
+  version: 3.0.0
 
 source:
   path: ../../../gector
@@ -20,7 +20,7 @@ requirements:
   # build:
   #   - transformers
   run:
-    - python>=3.8,<3.9
+    - python>=3.8,<3.11
     - allennlp
     - pytorch
     - python-Levenshtein
