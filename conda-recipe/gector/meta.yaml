@@ -10,9 +10,10 @@ build:
   noarch: python
   script:
     - cd $SRC_DIR
-    - "$PYTHON -m pip install . --no-deps -vv"
-    - mkdir -p $PREFIX/share/data
-    - rsync -tu --progress $SRC_DIR/data/verb-form-vocab.txt $PREFIX/share/data/verb-form-vocab.txt
+    - "$PYTHON -m pip install . -vv"
+    # - "$PYTHON -m pip install . --no-deps -vv"
+    # - mkdir -p $PREFIX/share/data
+    # - rsync -tu --progress $SRC_DIR/data/verb-form-vocab.txt $PREFIX/share/data/verb-form-vocab.txt
 
 requirements:
   host:
