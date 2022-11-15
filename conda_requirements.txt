@@ -1,9 +1,0 @@
-tokenizers>=0.11.1,!=0.11.3,<0.13
-allennlp
-pytorch
-python-Levenshtein
-transformers
-scikit-learn
-sentencepiece
-overrides
-numpy

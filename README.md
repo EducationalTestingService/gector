@@ -15,8 +15,8 @@ conda install --name <Environment_name> --file conda_requirements_cpu.txt
 conda activate <Environment_name>
 pip install -e . --no-dependencies
 ```
-The project was tested using Python 3.8, 3.9 and 3.10. If gpu is used, replaces
-the `conda_requirements_cpu.txt` with the `conda_requirements.txt`. The only
+The project was tested using Python 3.8, 3.9 and 3.10. If gpu is used, replace 
+`conda_requirements_cpu.txt` with `conda_requirements.txt`. The only
 difference between these two is that `pytorch-cpu` is used in the former.
 
 ## Unit tests
